@@ -184,11 +184,18 @@ body
     & .link
         color: $accent
 
+.common-issues
+    overflow-x: hidden
+
 .issue
     position: relative
     height: 80vh
     background: $green-gradient
     color: $text-white
+
+    +screen-down(sm)
+        min-height: 100vh
+
 
     & img
         position: absolute
