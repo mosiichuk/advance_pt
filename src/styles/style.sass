@@ -6,3 +6,340 @@
 
 html
     scroll-behavior: smooth
+    font-size: 83%
+
+    +screen-up(lg)
+        font-size: $baseSize
+
+body
+    font-family: 'Montserrat', sans-serif
+    +fs(16px)
+    background: $main-bg
+    font-weight: $medium-text
+    color: $dark
+    overflow-x: hidden
+
+
+.section-header
+    font-weight: $medium-text
+    +fs(35px)
+    line-height: 43px
+    letter-spacing: 0.02em
+    text-transform: uppercase
+    margin: 0 0 32px
+
+.hero-section
+    min-height: 100vh
+    position: relative
+    display: flex
+    flex-direction: column
+
+.navigation
+    font-weight: $regular-text
+    +fs(14px)
+    background: $bg-white
+    border-bottom: 1px solid $main-bg
+    box-shadow: 0 4px 59px -35px rgba(0, 0, 0, 0.25)
+
+.phone-number
+    +fs(16px)
+    font-weight: $bold-text
+    margin: 0 0 0 30px
+    +green-text-gradient()
+
+.locations
+    padding: 10px 0
+    background: $bg-white
+
+    & p
+        margin: 0 10px 10px 0
+        cursor: pointer
+
+        +screen-up(lg)
+            margin: 0
+
+.hero-img
+    position: absolute
+    height: 100%
+    top: 0
+
+    &-left
+        left: 0
+        width: 100%
+        z-index: 2
+
+        +screen-up(lg)
+            width: 55%
+            clip-path: polygon(0 0, 90% 0, 100% 100%, 0 100%)
+
+    &-right
+        width: 50%
+        right: 0
+        z-index: 1
+        display: none
+
+        +screen-up(lg)
+            display: block
+
+.hero-content
+    display: flex
+    flex-direction: column
+    position: relative
+    justify-content: center
+    flex-grow: 1
+    color: $white
+
+    & .container
+        z-index: 5
+
+    & .title
+        margin: 0 0 48px
+        font-weight: $bold-text
+        +fs(26px)
+        line-height: 32px
+
+    & .sub-title
+        margin: 0 0 48px
+        font-weight: $regular-text
+        +fs(20px)
+        line-height: 24px
+
+.button
+    padding: 10px 35px
+    text-transform: uppercase
+    font-weight: $bold-text
+    +fs(26px)
+    line-height: 32px
+    min-width: 233px
+    transition: all 0.3s ease
+
+    &:hover
+        transform: scale(1.05)
+
+    &--main
+        background: $bg-white
+
+        & span
+            +green-text-gradient()
+
+    &--accent
+        color: $text-white
+        background: $accent
+
+    &--ghost
+        padding: 8px 35px
+        background: transparent
+        border: 2px solid $white
+
+.statistics
+    padding: 40px 0 50px
+
+    & .info
+        display: flex
+        flex-direction: column
+        align-items: center
+        text-align: center
+
+        &--right-border
+            +screen-up(lg)
+                border-right: 1px solid $dark
+
+        &--left-border
+            +screen-up(lg)
+                border-left: 1px solid $dark
+
+        & h2
+            +fs(20px)
+            font-weight: $bold-text
+            margin: 0 0 14px
+            +green-text-gradient()
+
+        & p
+            text-transform: uppercase
+            max-width: 300px
+
+
+.our-services
+    padding: 50px 0 100px
+
+    & .info
+        margin: 0 0 24px
+        width: 100%
+        background: $bg-white
+        text-align: center
+        padding: 25px 25%
+        box-shadow: 0 4px 59px -35px rgba(0, 0, 0, 0.25)
+        border-radius: 15px 0
+
+        &:hover
+            background: $green-gradient
+            color: $text-white
+
+            & path
+                fill: #FFFFFF
+
+        & svg
+            margin: 0 0 10px
+
+    & .link
+        color: $accent
+
+.issue
+    position: relative
+    height: 80vh
+    background: $green-gradient
+    color: $text-white
+
+    & img
+        position: absolute
+        height: 100%
+        top: 0
+        display: none
+        width: 48%
+
+        +screen-up(lg)
+            display: block
+
+    & .img-left
+        left: 0
+
+    & .img-right
+        right: 0
+
+    & .container, .row
+        height: 100%
+
+    & h3
+        font-weight: $bold-text
+        +fs(35px)
+        margin: 0 0 4vh
+
+    & .info
+        margin: 0 0 5vh
+
+    &-item
+        position: relative
+        padding: 0 0 0 60px
+        margin: 0 0 23px
+
+        &::before
+            position: absolute
+            content: ''
+            background: $bg-white
+            width: 30px
+            height: 2px
+            left: 0
+            top: 50%
+            transform: translateY(-50%)
+
+.right-skew
+    clip-path: polygon(0 0, 90% 0, 100% 100%, 0 100%)
+
+.left-skew
+    clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%)
+
+.faq
+    padding: 100px 0
+
+.accordion
+
+    &-tab
+        width: 100%
+        overflow: hidden
+        margin: 0 0 16px
+
+    &-title
+        width: 100%
+        color: $text-white
+        +fs(35px)
+        font-weight: $regular-text
+        display: flex
+        justify-content: space-between
+        padding: 11px 22px 11px 22px
+        background: $green-gradient
+        cursor: pointer
+        border-radius: 15px 0
+
+        &::after
+            content: "\276F"
+            +fs(25px)
+            width: 1em
+            height: 1em
+            text-align: center
+            transition: all .35s
+            transform: rotate(90deg)
+
+        &--open::after
+            transform: rotate(270deg)
+
+    &-content
+        color: $dark
+        transition: all .35s
+        padding: 24px
+        border-bottom: 1px solid $accent
+
+        & p:not(:last-child)
+            margin: 0 0 24px
+
+        &--hidden
+            padding-top: 0
+            padding-bottom: 0
+            height: 0
+            border: none
+
+.testimonials
+    padding: 0 0 60px
+
+.testimonial
+    width: 90%
+    padding: 10px 0 0
+    text-align: center
+    border-top: 2px solid skyblue
+    border-image: $green-gradient
+    border-image-slice: 1
+    margin: 0 auto 35px
+
+    +screen-up(lg)
+        margin: 0 auto
+
+    & .review
+        +fs(22px)
+        font-weight: $bold-text
+
+.find-location
+    position: relative
+    height: 335px
+    background: url("../img/find-location.jpg") no-repeat center top / cover
+    border-radius: 15px 0
+    box-shadow: 0 4px 59px -35px rgba(0, 0, 0, 0.25)
+
+    & .content
+        color: $text-white
+        text-align: center
+        +abs-center
+
+        & h3
+            text-decoration: underline
+            font-weight: $bold-text
+            +fs(35px)
+            line-height: 43px
+            margin: 0 0 24px
+
+        & p
+            font-weight: $regular-text
+            line-height: 20px
+
+.footer
+    background: $dark
+    padding: 12px 0
+
+    & .content
+        display: flex
+        flex-wrap: wrap
+        color: $text-white
+        text-align: center
+        justify-content: space-around
+
+        & p:not(:last-child)
+            margin: 0 10px 10px 0
+
